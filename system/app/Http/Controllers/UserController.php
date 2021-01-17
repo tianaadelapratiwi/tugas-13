@@ -39,7 +39,7 @@ class UserController extends Controller
 		$userDetail->no_handphone = request('no_handphone');
 		$userDetail->save();
 		
-		return redirect('user')->with('success', 'Data Berhasil di Tambahkan');
+		return redirect('admin/pengguna')->with('success', 'Data Berhasil di Tambahkan');
 	}
 	
 	function show(User $user)
@@ -63,13 +63,13 @@ class UserController extends Controller
 		if(request('password')) $user->password = request('password');
 		$user->save();
 
-		return redirect('user')->with('success', 'Data Berhasil di Update');
+		return redirect('admin/pengguna')->with('success', 'Data Berhasil di Update');
 	}
 	
 	function destroy(User $user)
 	{
 		$user->delete();
 
-		return redirect('user')->with('danger', 'Data Berhasil di Hapus');
+		return redirect('admin/pengguna')->with('danger', 'Data Berhasil di Hapus');
 	}
 }
